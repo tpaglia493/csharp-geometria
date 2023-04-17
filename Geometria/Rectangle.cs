@@ -9,7 +9,7 @@ namespace Geometria
     public class Rectangle
     {//ATTRIBUTES
         public int baseLength;
-        public int height;
+        public int heigth;
         public int area;
         public int perimeter;
 
@@ -17,31 +17,59 @@ namespace Geometria
 
 
         //CONSTRUCTOR
-        public Rectangle(int baseLength, int height)
+        public Rectangle(int baseLength, int heigth)
         {
             this.baseLength = baseLength;
-            this.height = height;
+            this.heigth = heigth;
         }
 
     //METHODS   
         public int GetArea() 
         {
-            area = (baseLength * height);
+            area = (baseLength * heigth);
             return area; 
         }
         public int GetPerimeter() {
-            perimeter = (baseLength + height) * 2;
+            perimeter = (baseLength + heigth) * 2;
             return perimeter;
         }
 
         public void PrintRectangleDescription()
         {
             Console.WriteLine($"—— Rettangolo ——");
-            Console.WriteLine($"base: {this.baseLength} cm");
-            Console.WriteLine($"altezza: {this.height} cm");
-            Console.WriteLine($"Perimetro: {this.perimeter} cm");
-            Console.WriteLine($"Area: {this.area} cm2");
+            Console.WriteLine($"base: {baseLength} cm");
+            Console.WriteLine($"altezza: {heigth} cm");
+            Console.WriteLine($"Perimetro: {perimeter} cm");
+            Console.WriteLine($"Area: {area} cm^2");
         }
+        
+        public void DrawPerimeter() 
+        {
+            string baseLine = " ";
+            string blankSpace = "";
+            string heigthLine = "";
+            for(int i = 1; i <= baseLength; i++) 
+            {
+                baseLine +="--";
+                blankSpace += "  ";
+            }
+            for(int i = 1; i <= heigth; i++) 
+            {
+                heigthLine = "|"+blankSpace+"|";
+            }
+            for(int i = 0; i <= heigth+1; i++)
+            {
+                if(i==0 || i == heigth + 1)
+                {
+                    Console.WriteLine(baseLine);
+                }
+                else { Console.WriteLine(heigthLine);
+            }
+
+        }
+
+
+    }
     }
 }
 

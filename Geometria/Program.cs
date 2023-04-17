@@ -1,11 +1,4 @@
 ﻿/* 
-3. Provate ad istanziare tanti rettangoli con nome diverso e attributi diversi (baseRettangolo e altezzaRettangolo cambiati) 
-e provate a stampare le loro proprietà ad esempio con un metodo StampaRettangolo che vi stampi il vostro rettangolo ad esempio cosi:
- —— Rettangolo ——
-base: 20 cm
-altezza: 10 cm
-Perimetro: 60 cm
-Area: 200 cm2
 BONUS:
 Aggiungere alla classe Rettangolo un metodo “disegna” che disegna in console il rettangolo con le sue dimensioni, 
 ossia tanti “—” (due trattini) orizzontali quanto è grande la sua base e tanti ‘|’ verticali quanto e grande la sua altezza.
@@ -17,9 +10,11 @@ using Geometria;
 Rectangle[] arrayOfRectangles = CreateArrayFromInput();
 
 Console.WriteLine(arrayOfRectangles.Length);
+
 for (int i = 0; i < arrayOfRectangles.Length; i++)
 {
     arrayOfRectangles[i].PrintRectangleDescription();
+    arrayOfRectangles[i].DrawPerimeter();
 }
 
 
