@@ -23,13 +23,50 @@ ossia tanti “—” (due trattini) orizzontali quanto è grande la sua base e 
 //---------------------------- MAIN PROGRAM ------------------------------
 using Geometria;
 
-Console.Write("Please insert the heigth of the rectangle:");
-int rectangleHeigth = int.Parse(Console.ReadLine());
+Rectangle[] arrayOfRectangles = CreateArrayFromInput();
 
-Console.Write("Please insert the length of the base of the rectangle:");
-int rectangleBaseLength = int.Parse(Console.ReadLine());
 
-Rectangle newRectangle = new Rectangle(rectangleBaseLength, rectangleHeigth);
 
-Console.WriteLine("The perimeter is " + newRectangle.GetPerimeter()+"cm"); ;
-Console.WriteLine("The area is " + newRectangle.GetArea()+"cm^2");
+
+
+
+//FUNZIONE PER CREARE ARRAY DA INPUT
+Rectangle[] CreateArrayFromInput()
+{
+    int ArrayLengthFromInput;
+    Rectangle[] array;
+
+    Console.Write("How long should the list be? ");
+
+    try
+    {
+        ArrayLengthFromInput = int.Parse(Console.ReadLine());
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("Please insert a number ");
+        Console.Write("How long should the list be? ");
+        ArrayLengthFromInput = int.Parse(Console.ReadLine());
+    }
+
+
+
+    array = new Rectangle[ArrayLengthFromInput];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write("Please insert the heigth of the rectangle:");
+        int rectangleHeigth = int.Parse(Console.ReadLine());
+
+        Console.Write("Please insert the length of the base of the rectangle:");
+        int rectangleBaseLength = int.Parse(Console.ReadLine());
+
+        Rectangle newRectangle = new Rectangle(rectangleBaseLength, rectangleHeigth);
+        Console.WriteLine("The perimeter is " + newRectangle.GetPerimeter() + "cm"); ;
+        Console.WriteLine("The area is " + newRectangle.GetArea() + "cm^2");
+    }
+
+    return array;
+
+
+}
