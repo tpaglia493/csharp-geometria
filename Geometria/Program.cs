@@ -1,9 +1,4 @@
-﻿/* 
-BONUS:
-Aggiungere alla classe Rettangolo un metodo “disegna” che disegna in console il rettangolo con le sue dimensioni, 
-ossia tanti “—” (due trattini) orizzontali quanto è grande la sua base e tanti ‘|’ verticali quanto e grande la sua altezza.
-*/
-
+﻿
 //---------------------------- MAIN PROGRAM ------------------------------
 using Geometria;
 
@@ -11,12 +6,10 @@ Rectangle[] arrayOfRectangles = CreateArrayFromInput();
 
 for (int i = 0; i < arrayOfRectangles.Length; i++)
 {
+    Console.WriteLine($"—— Rettangolo #{i+1}——");
     arrayOfRectangles[i].PrintRectangleDescription();
     arrayOfRectangles[i].DrawPerimeter();
 }
-
-
-
 
 
 //------------------------------ FUNCTIONS --------------------------------
@@ -46,10 +39,10 @@ Rectangle[] CreateArrayFromInput()
 
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write("Please insert the heigth of the rectangle:");
+        Console.Write($"Please insert the heigth of the rectangle #{i+1}:");
         int rectangleHeigth = int.Parse(Console.ReadLine());
 
-        Console.Write("Please insert the length of the base of the rectangle:");
+        Console.Write($"Please insert the length of the base of the rectangle #{i+1}:");
         int rectangleBaseLength = int.Parse(Console.ReadLine());
 
         Rectangle newRectangle = new Rectangle(rectangleBaseLength, rectangleHeigth);

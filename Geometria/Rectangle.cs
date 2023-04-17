@@ -36,7 +36,6 @@ namespace Geometria
 
         public void PrintRectangleDescription()
         {
-            Console.WriteLine($"—— Rettangolo ——");
             Console.WriteLine($"base: {baseLength} cm");
             Console.WriteLine($"altezza: {heigth} cm");
             Console.WriteLine($"Perimetro: {perimeter} cm");
