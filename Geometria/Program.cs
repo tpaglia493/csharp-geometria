@@ -9,8 +9,6 @@ using Geometria;
 
 Rectangle[] arrayOfRectangles = CreateArrayFromInput();
 
-Console.WriteLine(arrayOfRectangles.Length);
-
 for (int i = 0; i < arrayOfRectangles.Length; i++)
 {
     arrayOfRectangles[i].PrintRectangleDescription();
@@ -55,7 +53,8 @@ Rectangle[] CreateArrayFromInput()
         int rectangleBaseLength = int.Parse(Console.ReadLine());
 
         Rectangle newRectangle = new Rectangle(rectangleBaseLength, rectangleHeigth);
-
+        int perimeter = newRectangle.GetPerimeter();
+        int area = newRectangle.GetArea();
         array[i] = newRectangle;
     }
 
