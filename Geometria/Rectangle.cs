@@ -33,6 +33,15 @@ namespace Geometria
             perimeter = (baseLength + height) * 2;
             return perimeter;
         }
+
+        public void PrintRectangleDescription()
+        {
+            Console.WriteLine($"—— Rettangolo ——");
+            Console.WriteLine($"base: {this.baseLength} cm");
+            Console.WriteLine($"altezza: {this.height} cm");
+            Console.WriteLine($"Perimetro: {this.perimeter} cm");
+            Console.WriteLine($"Area: {this.area} cm2");
+        }
     }
 }
 
